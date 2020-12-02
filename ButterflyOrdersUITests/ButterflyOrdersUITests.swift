@@ -2,7 +2,7 @@
 //  ButterflyOrdersUITests.swift
 //  ButterflyOrdersUITests
 //
-//  Created by Amor Cristy Gemela on 1/12/20.
+//  Created by Cristina Rodriguez on 1/12/20.
 //
 
 import XCTest
