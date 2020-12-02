@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B50" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Invoice" representedClassName="Invoice" syncable="YES" codeGenerationType="class">
+    <entity name="Invoice" representedClassName="Invoice" syncable="YES" codeGenerationType="category">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="invoice_number" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="receipts" optional="YES" attributeType="Transformable" customClassName="[Receipt]"/>
         <attribute name="received_status" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="receipts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Receipt"/>
     </entity>
-    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="category">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="quantity" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <relationship name="last_updated_entity_id" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PurchaseOrder" inverseName="items" inverseEntity="PurchaseOrder"/>
     </entity>
-    <entity name="PurchaseOrder" representedClassName="PurchaseOrder" syncable="YES" codeGenerationType="class">
-        <attribute name="last_updated" optional="YES" attributeType="String"/>
+    <entity name="PurchaseOrder" representedClassName="PurchaseOrder" syncable="YES" codeGenerationType="category">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="invoices" optional="YES" attributeType="Transformable" customClassName="[Invoice]"/>
+        <attribute name="last_updated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="purchase_order_number" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="invoices" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Invoice"/>
-        <relationship name="items" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Item" inverseName="last_updated_entity_id" inverseEntity="Item"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="last_updated_entity_id" inverseEntity="Item"/>
     </entity>
-    <entity name="Receipt" representedClassName="Receipt" syncable="YES" codeGenerationType="class">
-        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+    <entity name="Receipt" representedClassName="Receipt" syncable="YES" codeGenerationType="category">
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="PurchaseOrder" positionX="-63" positionY="-18" width="128" height="89"/>
-        <element name="Item" positionX="-54" positionY="-9" width="128" height="74"/>
-        <element name="Invoice" positionX="-36" positionY="9" width="128" height="74"/>
+        <element name="PurchaseOrder" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="Item" positionX="-54" positionY="-9" width="128" height="14"/>
+        <element name="Invoice" positionX="-36" positionY="9" width="128" height="89"/>
         <element name="Receipt" positionX="-18" positionY="27" width="128" height="44"/>
     </elements>
 </model>

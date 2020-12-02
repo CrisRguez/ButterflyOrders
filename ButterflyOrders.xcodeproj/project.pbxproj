@@ -16,6 +16,10 @@
 		A13315E625767EFE002DA1A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A13315E425767EFE002DA1A3 /* LaunchScreen.storyboard */; };
 		A13315F125767EFE002DA1A3 /* ButterflyOrdersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13315F025767EFE002DA1A3 /* ButterflyOrdersTests.swift */; };
 		A13315FC25767EFE002DA1A3 /* ButterflyOrdersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13315FB25767EFE002DA1A3 /* ButterflyOrdersUITests.swift */; };
+		A133161C2577665D002DA1A3 /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13316142577665D002DA1A3 /* Item+CoreDataClass.swift */; };
+		A133161E2577665D002DA1A3 /* Invoice+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13316162577665D002DA1A3 /* Invoice+CoreDataClass.swift */; };
+		A13316202577665D002DA1A3 /* PurchaseOrder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13316182577665D002DA1A3 /* PurchaseOrder+CoreDataClass.swift */; };
+		A13316222577665D002DA1A3 /* Receipt+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A133161A2577665D002DA1A3 /* Receipt+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		A13315F725767EFE002DA1A3 /* ButterflyOrdersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ButterflyOrdersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A13315FB25767EFE002DA1A3 /* ButterflyOrdersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyOrdersUITests.swift; sourceTree = "<group>"; };
 		A13315FD25767EFE002DA1A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A13316142577665D002DA1A3 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A13316162577665D002DA1A3 /* Invoice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A13316182577665D002DA1A3 /* PurchaseOrder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PurchaseOrder+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A133161A2577665D002DA1A3 /* Receipt+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipt+CoreDataClass.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +113,7 @@
 				A13315D825767EFC002DA1A3 /* SceneDelegate.swift */,
 				A13315DA25767EFC002DA1A3 /* ViewController.swift */,
 				A13315DC25767EFC002DA1A3 /* Main.storyboard */,
+				A1331627257779B7002DA1A3 /* Models */,
 				A13315E225767EFE002DA1A3 /* Assets.xcassets */,
 				A13315E425767EFE002DA1A3 /* LaunchScreen.storyboard */,
 				A13315E725767EFE002DA1A3 /* Info.plist */,
@@ -129,6 +138,17 @@
 				A13315FD25767EFE002DA1A3 /* Info.plist */,
 			);
 			path = ButterflyOrdersUITests;
+			sourceTree = "<group>";
+		};
+		A1331627257779B7002DA1A3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A13316142577665D002DA1A3 /* Item+CoreDataClass.swift */,
+				A13316162577665D002DA1A3 /* Invoice+CoreDataClass.swift */,
+				A13316182577665D002DA1A3 /* PurchaseOrder+CoreDataClass.swift */,
+				A133161A2577665D002DA1A3 /* Receipt+CoreDataClass.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,7 +281,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13316202577665D002DA1A3 /* PurchaseOrder+CoreDataClass.swift in Sources */,
+				A133161E2577665D002DA1A3 /* Invoice+CoreDataClass.swift in Sources */,
+				A133161C2577665D002DA1A3 /* Item+CoreDataClass.swift in Sources */,
 				A13315E125767EFC002DA1A3 /* ButterflyOrders.xcdatamodeld in Sources */,
+				A13316222577665D002DA1A3 /* Receipt+CoreDataClass.swift in Sources */,
 				A13315DB25767EFC002DA1A3 /* ViewController.swift in Sources */,
 				A13315D725767EFC002DA1A3 /* AppDelegate.swift in Sources */,
 				A13315D925767EFC002DA1A3 /* SceneDelegate.swift in Sources */,
