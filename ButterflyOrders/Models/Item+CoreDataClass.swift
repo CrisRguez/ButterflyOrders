@@ -10,8 +10,8 @@ import Foundation
 import CoreData
 
 @objc(Item)
-public class Item: NSManagedObject, Decodable {
-    private enum CodingKeys: String, CodingKey { case id, quantity, last_updated_entity_id}
+public class Item: NSManagedObject, Codable {
+    private enum CodingKeys: String, CodingKey { case id, quantity, last_updated_user_entity_id }
     
         // 'required' is needed for Decodable conformance
         // 'convenice' to call self.init(entity:, insertInto)
@@ -34,8 +34,16 @@ public class Item: NSManagedObject, Decodable {
 
             let container = try decoder.container(keyedBy: CodingKeys.self)
 
-            self.id = try container.decode(UUID.self, forKey: .id)
+            self.id = try container.decode(Int64.self, forKey: .id)
             self.quantity = try container.decode(Int64.self, forKey: .quantity)
-            self.last_updated_entity_id = try container.decode(PurchaseOrder.self, forKey: .last_updated_entity_id)
+            self.last_updated_user_entity_id = try container.decode(Int64.self, forKey: .last_updated_user_entity_id)
+        }
+    
+    public func encode(to encoder: Encoder) throws {
+            var container = encoder.container(keyedBy: CodingKeys.self)
+
+            try container.encode(id, forKey: .id)
+        try container.encode(quantity, forKey: .quantity)
+        try container.encode(last_updated_user_entity_id, forKey: .last_updated_user_entity_id)
         }
 }
